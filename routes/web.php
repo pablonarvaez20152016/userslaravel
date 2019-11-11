@@ -21,17 +21,22 @@ Route::get('/logout', function () {
     return view('logout');
 });*/
 
-Route::get('/catalog','CatalogController@getIndex');
-
-Route::get('/catalog/show/{id}','CatalogController@getShow');
-
-Route::get('/catalog/create','CatalogController@getCreate');
-
-Route::get('/catalog/edit/{id}','CatalogController@getEdit');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/auth',function(){
+        return view('auth.login');
+    });
 
-Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/catalog','CatalogController@getIndex');
+
+    Route::get('/catalog/show/{id}','CatalogController@getShow');
+    
+    Route::get('/catalog/create','CatalogController@getCreate');
+    
+    Route::get('/catalog/edit/{id}','CatalogController@getEdit');
+   
+});
+
