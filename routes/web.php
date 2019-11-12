@@ -21,10 +21,10 @@ Route::get('/logout', function () {
     return view('logout');
 });*/
 
+
+
+Route::get('/home', 'HomeController@getHome')->name('home');
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/auth',function(){
         return view('auth.login');
@@ -33,10 +33,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/catalog','CatalogController@getIndex');
 
     Route::get('/catalog/show/{id}','CatalogController@getShow');
-    
+    Route::put('/catalog/create','CatalogController@postCreate');
     Route::get('/catalog/create','CatalogController@getCreate');
     
+    Route::put('/catalog/edit/{id}','CatalogController@putEdit');
     Route::get('/catalog/edit/{id}','CatalogController@getEdit');
+    
    
 });
 

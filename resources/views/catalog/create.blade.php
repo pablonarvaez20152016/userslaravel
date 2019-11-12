@@ -12,42 +12,42 @@
          </div>
          <div class="card-body" style="padding:20px">
 
-          <form action="#" method="POST" name="formulario" id="formulario">
+          <form action="#" method="POST" type="file" enctype="multipart/form-data" name="formulario" id="formulario">
              	
          {{ method_field('PUT') }}
           @csrf
                
                <div class="form-group">
                   <label  for="title:">Titulo</label>
-                  <input class="form-control" name="title" id="title" type="text" placeholder="Titulo" required
+                  <input class="form-control" name="title" id="title" type="text"  required
                   oninvalid="setCustomValidity('El campo titulo es obligatorio')" oninput="setCustomValidity('')">
                </div>
 
                <div class="form-group">
                      <label for="year:">Año</label>
-                     <input class="form-control" name="year" id="year" type="text" placeholder="Año" 
+                     <input class="form-control" name="year" id="year" type="text" 
                      oninvalid="setCustomValidity('El campo año es obligatorio')" oninput="setCustomValidity('')">
                </div>
 
                <div class="form-group">
                      <label for="director:">Director</label>
-                     <input class="form-control" name="director" id="director" type="text" placeholder="Director" required
+                     <input class="form-control" name="director" id="director" type="text"  required
                      oninvalid="setCustomValidity('El campo director es obligatorio')" oninput="setCustomValidity('')">
                </div>
 
                <div class="form-group">
                      <label for="poster:">Poster</label>
-                     <input class="form-control" name="poster" id="poster" type="text" placeholder="Poster" required
+                     <input class="form-control" name="poster" id="poster" type="text"  required
                      oninvalid="setCustomValidity('El campo poster es obligatorio')" oninput="setCustomValidity('')">
                </div>
 
                <div class="form-group">
                      <label for="synopsis:">Resumen</label>
-                     <input class="form-control" name="synopsis" id="synopsis" type="textarea" placeholder="Resumen" required
-                     oninvalid="setCustomValidity('El campo resumen es obligatorio')" oninput="setCustomValidity('')">
+                     <textarea class="form-control" name="synopsis" id="synopsis" type="textarea"  required
+                     oninvalid="setCustomValidity('El campo resumen es obligatorio')" oninput="setCustomValidity('')"></textarea>
                </div>
 
-               <div><button type="file" enctype="multipart/form-data" class="btn btn-primary">Añadir Pelicula</button></div>
+               <div><button type="submit" class="btn btn-primary">Añadir Pelicula</button></div>
 
             </form>
 
