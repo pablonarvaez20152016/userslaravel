@@ -38,7 +38,10 @@ Route::group(['middleware' => 'auth'], function () {
     
     Route::put('/catalog/edit/{id}','CatalogController@putEdit');
     Route::get('/catalog/edit/{id}','CatalogController@getEdit');
+
+    Route::put('/catalog/rent/{id}','CatalogController@putRent');
+    Route::put('/catalog/return/{id}','CatalogController@putReturn');
+    Route::delete('/catalog/delete/{id}','CatalogController@deleteMovie');
     
-   
 });
 

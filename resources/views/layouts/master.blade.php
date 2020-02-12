@@ -9,14 +9,22 @@
     <link rel="stylesheet" href="{{ url('/assets/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url('/assets/bootstrap/js/bootstrap.min.js') }}">
     @yield('links')
+    <head>
+{{ notify_header(true) }}
+
+</head>
     <title>videoclub</title>
   </head>
   <body>
         @include('partials.navbar')
-        <div class="container">
-              @yield('content') 
-        </div>
+     
 
+
+        <div class="container"> 
+        {{ notify_footer(true) }}
+        @yield('content') 
+        </div>
+        
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
